@@ -8,4 +8,6 @@ public interface IProducto {
     MessageResponse findAll();
    // ProductoEntity save(ProductoEntity producto);
     MessageResponse save(ProductoEntity producto);
+    MessageResponse update(Long id, ProductoEntity producto);
+    MessageResponse delete(Long id);
 }

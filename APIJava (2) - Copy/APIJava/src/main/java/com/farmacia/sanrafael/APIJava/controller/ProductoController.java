@@ -33,4 +33,16 @@ public class ProductoController {
     public MessageResponse saveProducto(@RequestBody ProductoEntity producto) {
         return iProducto.save(producto);
     }
+
+    @Transactional
+    @PutMapping("/producto/{id}")
+    public MessageResponse updateProducto(@PathVariable Long id, @RequestBody ProductoEntity producto) {
+        return iProducto.update(id,producto);
+    }
+
+    @Transactional
+    @DeleteMapping("/producto/{id}")
+    public MessageResponse deleteProducto(@PathVariable Long id) {
+        return iProducto.delete(id);
+    }
 }
